@@ -1,0 +1,208 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/student"
+         xmlns="http://example.org/student#">
+
+<owl:Ontology rdf:about="http://example.org/student"/>
+
+<owl:ObjectProperty rdf:about="#hasFormula">
+  <rdfs:domain rdf:resource="#Shapes"/>
+  <rdfs:range rdf:resource="#Formulas"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Has Formula</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a geometric shape to its corresponding formula for calculating total surface area.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#requiresProperty">
+  <rdfs:domain rdf:resource="#Shapes"/>
+  <rdfs:range rdf:resource="#Properties"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Requires Property</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a geometric shape to the properties (such as length, width, height) required for total surface area calculation.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasExample">
+  <rdfs:domain rdf:resource="#Shapes"/>
+  <rdfs:range rdf:resource="#Examples"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Has Example</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a geometric shape to a practical example or solved problem related to its total surface area.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasQuestion">
+  <rdfs:domain rdf:resource="#Practice"/>
+  <rdfs:range rdf:resource="#Shapes"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Has Question</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a practice question to a shape and its corresponding formula for total surface area calculation.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasLearningResource">
+  <rdfs:domain rdf:resource="#Shapes"/>
+  <rdfs:range rdf:resource="#LearningResources"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Has Learning Resource</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Links a geometric shape to learning resources, such as explanations or diagrams, to help understand its surface area calculation.</rdfs:comment>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#name">
+  <rdfs:domain rdf:resource="#Student"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Name of the student</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The name of the student associated with the practice or calculation activity</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#length">
+  <rdfs:domain rdf:resource="#Properties"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Length</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The length property required for total surface area calculation of shapes like cuboids and cylinders.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#width">
+  <rdfs:domain rdf:resource="#Properties"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Width</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The width property required for total surface area calculation of shapes like cuboids.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#height">
+  <rdfs:domain rdf:resource="#Properties"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Height</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The height property required for total surface area calculation of shapes like cuboids and cylinders.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#radius">
+  <rdfs:domain rdf:resource="#Properties"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Radius</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The radius property required for total surface area calculation of shapes like spheres and cylinders.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#slantHeight">
+  <rdfs:domain rdf:resource="#Properties"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Slant Height</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The slant height property required for total surface area calculation of cones.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#formulaString">
+  <rdfs:domain rdf:resource="#Formulas"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Formula String</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A text-based representation of the formula for calculating total surface area.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#questionText">
+  <rdfs:domain rdf:resource="#Practice"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Question Text</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The text of a practice question involving the calculation of total surface area.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#answer">
+  <rdfs:domain rdf:resource="#Practice"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Answer</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The answer to a practice question on total surface area.</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Shapes">
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Shapes</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A class that represents geometric shapes for which total surface area can be calculated.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Practice">
+  <rdfs:subClassOf rdf:resource="#Student"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Practice</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A subclass of Student, representing practice activities related to total surface area calculation.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Student">
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Student</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A class representing students who are involved in practice and calculations related to total surface area.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Calculate">
+  <rdfs:subClassOf rdf:resource="#Student"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Calculate</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A subclass of Student, representing the process of calculation for total surface area.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Question">
+  <rdfs:subClassOf rdf:resource="#Practice"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Question</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A subclass of Practice, representing practice questions that involve total surface area calculations for various shapes.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Area">
+  <rdfs:subClassOf rdf:resource="#Calculate"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Area</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A subclass of Calculate, representing the total surface area calculations for various shapes.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Cube">
+  <rdfs:subClassOf rdf:resource="#Shapes"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cube</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A subclass of Shapes, representing the cube shape.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Cuboid">
+  <rdfs:subClassOf rdf:resource="#Shapes"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cuboid</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A subclass of Shapes, representing the cuboid shape.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Cylinder">
+  <rdfs:subClassOf rdf:resource="#Shapes"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cylinder</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A subclass of Shapes, representing the cylinder shape.</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#Sphere">
+  <rdfs:subClassOf rdf:resource="#Shapes"/>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sphere</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A subclass of Shapes, representing the sphere shape.</rdfs:comment>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#cubeFormula">
+  <rdf:type rdf:resource="#Formulas"/>
+  <formulaString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">6 × side²</formulaString>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cube Formula</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The formula for calculating the total surface area of a cube.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cubeProperties">
+  <rdf:type rdf:resource="#Properties"/>
+  <length rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4.0</length>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cube Properties</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The properties of a cube with a side length of 4 cm.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cubeExample">
+  <rdf:type rdf:resource="#Examples"/>
+  <hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Find the TSA of a cube with side 4 cm.</hasExample>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cube Example</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An example problem for calculating the TSA of a cube.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#cubeLearningResource">
+  <rdf:type rdf:resource="#LearningResources"/>
+  <explanation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The TSA of a cube is calculated by finding the area of each of the 6 square faces and adding them together. The formula is 6 × side².</explanation>
+  <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cube Learning Resource</rdfs:label>
+  <rdfs:comment rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Learning resource for understanding the TSA calculation for a cube.</rdfs:comment>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#shital">
+  <rdf:type rdf:resource="#Student"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#atith">
+  <rdf:type rdf:resource="#Student"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Saroj">
+  <rdf:type rdf:resource="#Student"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

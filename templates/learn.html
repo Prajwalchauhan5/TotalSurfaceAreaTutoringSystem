@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-200">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>TSASimplified - Tutorials</title>
+  </head>
+  <body class="m-0 font-sans">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 text-gray-100 sticky top-0 shadow-md z-50">
+      <div
+        class="container mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <div class="flex space-x-4">
+          <a
+            href="/introduction"
+            class="px-4 py-2 text-lg font-medium rounded hover:bg-blue-600"
+            >Introduction</a
+          >
+          <a
+            href="/learn"
+            class="px-4 py-2 text-lg font-medium rounded hover:bg-blue-600 active:bg-blue-700"
+            >Learn</a
+          >
+          <a
+            href="/practice"
+            class="px-4 py-2 text-lg font-medium rounded hover:bg-blue-600"
+            >Practice</a
+          >
+          <a
+            href="/calculate"
+            class="px-4 py-2 text-lg font-medium rounded hover:bg-blue-600"
+            >Calculate</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Tutorial Section -->
+    <div class="container mx-auto mt-6 p-4 bg-white shadow rounded">
+      <h1 class="text-center text-2xl font-semibold mb-6">
+        Learn Total Surface Area
+      </h1>
+
+      <form id="tutorialForm" class="space-y-4">
+        <div>
+          <label
+            for="tutorialShape"
+            class="block text-sm font-medium text-gray-700"
+            >Choose a Shape to Learn:</label
+          >
+          <select
+            id="tutorialShape"
+            class="mt-1 block w-full p-2 border border-gray-300 rounded focus:ring-blue-500 focus:border-blue-500"
+            required
+          >
+            <option value="" disabled selected>Choose a shape</option>
+            <option value="cube">Cube</option>
+            <option value="cuboid">Cuboid</option>
+            <option value="cylinder">Cylinder</option>
+            <option value="sphere">Sphere</option>
+          </select>
+        </div>
+
+        <button
+          type="button"
+          id="loadTutorial"
+          class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 focus:ring-4 focus:ring-blue-300"
+        >
+          Load Tutorial
+        </button>
+      </form>
+
+      <div
+        id="tutorialContent"
+        class="mt-6 p-4 border border-gray-200 rounded bg-gray-50"
+      ></div>
+    </div>
+
+    <!-- JavaScript for Tutorials -->
+    <script>
+      const loadButton = document.getElementById("loadTutorial");
+      const tutorialContent = document.getElementById("tutorialContent");
+      const tutorialShape = document.getElementById("tutorialShape");
+
+      loadButton.addEventListener("click", () => {
+        const shape = tutorialShape.value;
+        let content = "";
+
+        if (shape === "cube") {
+          content = `
+            <h2 class='text-xl font-semibold mb-2'>Cube</h2>
+            <p>A cube is a 3D shape with all equal sides. It has 6 square faces.</p>
+            <p class='font-medium'>Formula for Total Surface Area:</p>
+            <p class='p-2 bg-gray-200 rounded'>TSA = 6 * Side<sup>2</sup></p>
+            <p>Where <strong>Side</strong> is the length of one edge of the cube.</p>
+          `;
+        } else if (shape === "cuboid") {
+          content = `
+            <h2 class='text-xl font-semibold mb-2'>Cuboid</h2>
+            <p>A cuboid is a 3D shape with rectangular faces.</p>
+            <p class='font-medium'>Formula for Total Surface Area:</p>
+            <p class='p-2 bg-gray-200 rounded'>TSA = 2 * (Length * Width + Length * Height + Width * Height)</p>
+            <p>Where <strong>Length</strong>, <strong>Width</strong>, and <strong>Height</strong> are dimensions of the cuboid.</p>
+          `;
+        } else if (shape === "cylinder") {
+          content = `
+            <h2 class='text-xl font-semibold mb-2'>Cylinder</h2>
+            <p>A cylinder has two circular bases and a curved surface.</p>
+            <p class='font-medium'>Formula for Total Surface Area:</p>
+            <p class='p-2 bg-gray-200 rounded'>TSA = 2 * π * Radius * (Radius + Height)</p>
+            <p>Where <strong>Radius</strong> is the radius of the base and <strong>Height</strong> is the height of the cylinder.</p>
+          `;
+        } else if (shape === "sphere") {
+          content = `
+            <h2 class='text-xl font-semibold mb-2'>Sphere</h2>
+            <p>A sphere is a perfectly round 3D shape.</p>
+            <p class='font-medium'>Formula for Total Surface Area:</p>
+            <p class='p-2 bg-gray-200 rounded'>TSA = 4 * π * Radius<sup>2</sup></p>
+            <p>Where <strong>Radius</strong> is the distance from the center to the surface.</p>
+          `;
+        } else {
+          content = `<p class='text-red-500'>Please select a shape to load the tutorial.</p>`;
+        }
+
+        tutorialContent.innerHTML = content;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-gray-200">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>TSASimplified - Introduction</title>
+  </head>
+  <body class="m-0 font-sans flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 text-gray-100 sticky top-0 shadow-md z-50">
+      <div
+        class="container mx-auto flex items-center justify-between px-4 py-3"
+      >
+        <div class="flex space-x-4">
+          <a
+            href="/introduction"
+            class="px-4 py-2 text-lg font-medium rounded hover:bg-blue-600 active:bg-blue-700"
+            >Introduction</a
+          >
+          <a
+            href="/learn"
+            class="px-4 py-2 text-lg font-medium rounded hover:bg-blue-600"
+            >Learn</a
+          >
+          <a
+            href="/practice"
+            class="px-4 py-2 text-lg font-medium rounded hover:bg-blue-600"
+            >Practice</a
+          >
+          <a
+            href="/calculate"
+            class="px-4 py-2 text-lg font-medium rounded hover:bg-blue-600"
+            >Calculate</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Introduction Section -->
+    <div class="container mx-auto mt-6 p-4 bg-white shadow rounded flex-grow">
+      <h1 class="text-center text-2xl font-semibold mb-6">
+        Welcome to TSA Tutoring System
+        <div class="text-center text-xl mb-4" id="welcomeMessage">
+          <!-- Dynamic welcome message will appear here -->
+        </div>
+      </h1>
+
+      <p class="text-lg mb-4">
+        <strong>Total Surface Area Tutoring System</strong> is an interactive
+        learning system designed to help you master the concept of Total Surface
+        Area (TSA) for various 3D shapes. Whether you're a student or simply
+        interested in geometry, our system provides an engaging way to learn and
+        practice these concepts.
+      </p>
+
+      <p class="text-lg mb-4">The system is built around two core features:</p>
+
+      <ul class="list-disc pl-6 mb-4">
+        <li class="text-lg">
+          <strong>Tutorials:</strong> Step-by-step guides that explain the
+          formulas and properties of different 3D shapes. You can choose from a
+          variety of shapes such as cubes, cuboids, cylinders, and spheres.
+        </li>
+        <li class="text-lg">
+          <strong>Practice:</strong> Interactive exercises that let you test
+          your understanding. You can manually enter dimensions and calculate
+          the TSA for various shapes.
+        </li>
+      </ul>
+
+      <p class="text-lg mb-4">
+        <strong>How It Works:</strong>
+      </p>
+      <p class="text-lg mb-4">
+        1. Choose a shape from the list of options (e.g., Cube, Cuboid,
+        Cylinder, Sphere).
+      </p>
+      <p class="text-lg mb-4">
+        2. Read the tutorial content that explains the concept of Total Surface
+        Area for that shape.
+      </p>
+      <p class="text-lg mb-4">
+        3. After reading the tutorial, practice by manually entering dimensions
+        and calculating the TSA using the provided formulas.
+      </p>
+      <p class="text-lg mb-4">
+        4. The system offers real-time feedback, ensuring you understand each
+        concept thoroughly.
+      </p>
+
+      <p class="text-lg mb-4">
+        Whether you're just starting to learn or need a refresher, TSASimplified
+        offers a comprehensive approach to mastering TSA. Explore the tutorials,
+        test your skills, and become confident in calculating the Total Surface
+        Area of various shapes.
+      </p>
+
+      <div class="text-center mt-6">
+        <a
+          href="/learn"
+          class="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+        >
+          Start Learning Now
+        </a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-100 mt-6 p-4 text-center">
+      <p>&copy; 2024 TSASimplified. All Rights Reserved.</p>
+    </footer>
+
+    <!-- <script>
+      // Check if a username is stored in localStorage
+      const userName = localStorage.getItem("userName");
+
+      // Display a personalized greeting if the name exists
+      if (userName) {
+        document.getElementById("welcomeMessage").innerText = `${userName}`;
+      } else {
+        document.getElementById("welcomeMessage").innerText = "Welcome, Guest!";
+      }
+    </script> -->
+  </body>
+</html>
